@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nedumaran PM | Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a', /* Slate 900 */
+                        secondary: '#10b981', /* Emerald 500 */
+                        accent: '#3b82f6', /* Blue 500 */
+                        dark: '#1e293b',
+                        light: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Glassmorphism for Navbar */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-600 bg-slate-50 antialiased selection:bg-secondary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home" class="text-2xl font-bold text-primary tracking-tight">
+                        Nedumaran<span class="text-secondary"> PM</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-sm font-medium text-slate-700 hover:text-secondary transition-colors">Home</a>
+                    <a href="#about" class="text-sm font-medium text-slate-700 hover:text-secondary transition-colors">About</a>
+                    <a href="#skills" class="text-sm font-medium text-slate-700 hover:text-secondary transition-colors">Skills</a>
+                    <a href="#projects" class="text-sm font-medium text-slate-700 hover:text-secondary transition-colors">Projects</a>
+                    <a href="#education" class="text-sm font-medium text-slate-700 hover:text-secondary transition-colors">Education</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-primary text-white text-sm font-medium hover:bg-slate-800 transition-all shadow-lg shadow-slate-300/50">Contact Me</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button type="button" id="mobile-menu-btn" class="text-slate-700 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 shadow-xl">
+                <a href="#home" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary">Home</a>
+                <a href="#about" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary">About</a>
+                <a href="#skills" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary">Skills</a>
+                <a href="#projects" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary">Projects</a>
+                <a href="#education" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary">Education</a>
+                <a href="#contact" class="block mt-4 px-3 py-3 text-center rounded-md text-base font-medium bg-secondary text-white hover:bg-emerald-600">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <p class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-secondary uppercase bg-emerald-50 rounded-full border border-emerald-100 fade-in-up">
+                    Aspiring Full-Stack Developer & AI Enthusiast
+                </p>
+                <h1 class="text-5xl md:text-7xl font-bold text-primary mb-6 tracking-tight fade-in-up delay-100">
+                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Nedumaran</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-500 mb-10 leading-relaxed fade-in-up delay-200">
+                    Passionate about building scalable web applications and exploring Artificial Intelligence. Expert in Python, YOLO Object Detection, and Full-Stack Development.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in-up delay-300">
+                    <a href="#projects" class="px-8 py-3.5 rounded-full bg-primary text-white font-semibold hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="px-8 py-3.5 rounded-full bg-white text-primary border border-slate-200 font-semibold hover:border-primary hover:bg-slate-50 transition-all">
+                        Contact Me
+                    </a>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="mt-12 flex justify-center space-x-6 fade-in-up delay-300">
+                    <a href="mailto:nedumaranpm22@gmail.com" class="text-slate-400 hover:text-secondary text-2xl transition-colors"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/nedumaranpm22-cmyk" class="text-slate-400 hover:text-secondary text-2xl transition-colors"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/nedumaranpm22" class="text-slate-400 hover:text-secondary text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
+                  
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Background Elements -->
+        <div class="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative group">
+                    <!-- Profile Image -->
+                    <div class="relative overflow-hidden rounded-2xl shadow-2xl aspect-[4/5] bg-slate-200 flex items-center justify-center">
+                         <img src="profile pic.jpeg" alt="Nedumaran PM" class="object-cover w-full h-full transform group-hover:scale-105 transition-all duration-500">
+                    </div>
+                    <!-- Experience Badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 hidden md:block">
+                        <div class="flex items-center gap-3">
+                            <div class="p-3 bg-secondary/10 rounded-lg text-secondary">
+                                <i class="fas fa-code text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 uppercase font-semibold">Focus</p>
+                                <p class="text-sm font-bold text-primary">Web & AI Dev</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-6">About Me</h2>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        I am an <strong class="text-primary">Information Technology undergraduate</strong> at A.V.C. College of Engineering with a CGPA of 8.30. I have a strong foundation in software development and artificial intelligence, coupled with a drive for continuous learning.
+                    </p>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        My journey involves hands-on experience in building scalable web applications and developing AI models, such as my work with YOLO for object detection. I am actively seeking internship opportunities to apply my technical skills in a real-world industry environment.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-map-marker-alt text-secondary"></i>
+                            <span class="text-slate-700">Mayiladuthurai, Tamil Nadu</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-phone text-secondary"></i>
+                            <span class="text-slate-700">+91 7904672079</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-graduation-cap text-secondary"></i>
+                            <span class="text-slate-700">B.Tech IT (Undergraduate)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-language text-secondary"></i>
+                            <span class="text-slate-700">English, Tamil</span>
+                        </div>
+                    </div>
+
+                    <h3 class="text-lg font-bold text-primary mb-3">Key Achievements</h3>
+                    <ul class="space-y-2 mb-8">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-trophy text-yellow-500 mt-1"></i>
+                            <span class="text-sm text-slate-600">Won National-Level Technical Symposium twice for innovation.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-paint-brush text-purple-500 mt-1"></i>
+                            <span class="text-sm text-slate-600">Secured 1st place in District-Level Drawing Competitions (3 times).</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary mb-4">Technical Skills</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">A snapshot of the technologies and tools I use to bring ideas to life.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Programming Languages -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                        <i class="fas fa-code text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Python</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Java</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Web Technologies -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 mb-6">
+                        <i class="fas fa-laptop-code text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Web Development</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">HTML5</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">CSS3</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Responsive UI</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Web Apps</span>
+                    </div>
+                </div>
+
+                <!-- AI & Tools -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 mb-6">
+                        <i class="fas fa-brain text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">AI & Tools</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">YOLO</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">OpenCV</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Git/GitHub</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Figma</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-2">Featured Projects</h2>
+                    <p class="text-slate-500">Highlighting my technical capabilities.</p>
+                </div>
+                <a href="https://github.com" target="" class="hidden md:inline-flex items-center gap-2 text-secondary font-medium hover:text-emerald-700 transition-colors mt-4 md:mt-0">
+                    View GitHub <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-700 opacity-90"></div>
+                        <i class="fas fa-eye text-5xl text-white/20 group-hover:text-white/40 transition-colors z-10"></i>
+                        <span class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-2 py-1 rounded">AI / ML</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold text-primary mb-2">AI-Based Object Detection (YOLO)</h3>
+                        <p class="text-slate-500 text-sm mb-4 flex-1">
+                            An end-to-end object detection model using YOLO. Prepared datasets, trained models, and evaluated performance for real-world use cases.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs font-medium px-2 py-1 bg-slate-100 text-slate-600 rounded">Python</span>
+                            <span class="text-xs font-medium px-2 py-1 bg-slate-100 text-slate-600 rounded">YOLO</span>
+                            <span class="text-xs font-medium px-2 py-1 bg-slate-100 text-slate-600 rounded">Computer Vision</span>
+                        </div>
+                        <a href="#" class="text-secondary text-sm font-semibold hover:underline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-900 to-blue-700 opacity-90"></div>
+                        <i class="fas fa-check-circle text-5xl text-white/20 group-hover:text-white/40 transition-colors z-10"></i>
+                        <span class="absolute top-4 right-4 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">Web App</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold text-primary mb-2">Habit Tracker Application</h3>
+                        <p class="text-slate-500 text-sm mb-4 flex-1">
+                            A web application to monitor daily productivity. Implemented habit creation, progress tracking logic, and data persistence.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs font-medium px-2 py-1 bg-slate-100 text-slate-600 rounded">HTML/CSS</span>
+                            <span class="text-xs font-medium px-2 py-1 bg-slate-100 text-slate-600 rounded">JavaScript</span>
+                            <span class="text-xs font-medium px-2 py-1 bg-slate-100 text-slate-600 rounded">LocalStorage</span>
+                        </div>
+                        <a href="https://github.com/nedumaranpm22-cmyk/Habittrackerapp" class="text-secondary text-sm font-semibold hover:underline">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-purple-900 to-purple-700 opacity-90"></div>
+                        <i class="fas fa-layer-group text-5xl text-white/20 group-hover:text-white/40 transition-colors z-10"></i>
+                        <span class="absolute top-4 right-4 bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded">Frontend</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold text-primary mb-2">Responsive Website Portfolio</h3>
+                        <p class="text-slate-500 text-sm mb-4 flex-1">
+                            Designed and developed clean, responsive websites focusing on UI/UX best practices using modern frontend technologies.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs font-medium px-2 py-1 bg-slate-100 text-slate-600 rounded">Tailwind</span>
+                            <span class="text-xs font-medium px-2 py-1 bg-slate-100 text-slate-600 rounded">Design</span>
+                            <span class="text-xs font-medium px-2 py-1 bg-slate-100 text-slate-600 rounded">Responsive</span>
+                        </div>
+                        <a href="#" class="text-secondary text-sm font-semibold hover:underline">View Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="education" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Education Timeline -->
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
+                        <span class="w-2 h-8 bg-secondary rounded-full"></span> Education
+                    </h2>
+                    <div class="space-y-8 border-l-2 border-slate-200 ml-3 pl-8 relative">
+                        <!-- Degree -->
+                        <div class="relative">
+                            <div class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white bg-secondary"></div>
+                            <h3 class="text-xl font-bold text-primary">B.Tech in Information Technology</h3>
+                            <p class="text-slate-700 font-medium">A.V.C. College of Engineering</p>
+                            <p class="text-slate-500 text-sm mb-2">Current | CGPA: 8.30</p>
+                            <p class="text-slate-500 text-sm">Mayiladuthurai, Tamil Nadu</p>
+                        </div>
+                        
+                        <!-- HSC -->
+                        <div class="relative">
+                            <div class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white bg-slate-300"></div>
+                            <h3 class="text-xl font-bold text-primary">HSC (XII) State Board</h3>
+                            <p class="text-slate-700 font-medium">Raj Matriculation Higher Secondary School</p>
+                            <p class="text-slate-500 text-sm mb-2">2024 | Percentage: 81%</p>
+                        </div>
+
+                        <!-- SSLC -->
+                        <div class="relative">
+                            <div class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white bg-slate-300"></div>
+                            <h3 class="text-xl font-bold text-primary">SSLC (X) State Board</h3>
+                            <p class="text-slate-700 font-medium">Raj Matriculation Higher Secondary School</p>
+                            <p class="text-slate-500 text-sm mb-2">2022 | Percentage: 82%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
+                        <span class="w-2 h-8 bg-blue-500 rounded-full"></span> Certifications
+                    </h2>
+                    <div class="grid gap-6">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-start gap-4">
+                            <div class="text-3xl text-blue-600"><i class="fab fa-microsoft"></i></div>
+                            <div>
+                                <h3 class="text-lg font-bold text-primary">Human Skills in the Age of AI</h3>
+                                <p class="text-slate-500 text-sm">Microsoft & LinkedIn Learning</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-start gap-4">
+                            <div class="text-3xl text-emerald-600"><i class="fas fa-robot"></i></div>
+                            <div>
+                                <h3 class="text-lg font-bold text-primary">ChatGPT Prompt Engineering</h3>
+                                <p class="text-slate-500 text-sm">OpenAI & Coursera</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-primary text-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Work Together</h2>
+            <p class="text-slate-300 mb-10 text-lg">
+                I'm currently seeking internship opportunities to apply my technical skills. 
+                Have a project in mind or just want to say hi?
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-12">
+                <a href="mailto:nedumaranpm22@gmail.com" class="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-sm border border-white/10">
+                    <i class="fas fa-envelope text-secondary text-xl"></i>
+                    <span>nedumaranpm22@gmail.com</span>
+                </a>
+                <a href="tel:+917904672079" class="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-sm border border-white/10">
+                    <i class="fas fa-phone text-secondary text-xl"></i>
+                    <span>+91 7904672079</span>
+                </a>
+            </div>
+
+            <!-- Simple Form Mockup -->
+            <form class="max-w-md mx-auto space-y-4" onsubmit="event.preventDefault(); alert('Message feature coming soon!');">
+                <input type="text" placeholder="Your Name" class="w-full px-5 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:border-secondary transition-colors">
+                <input type="email" placeholder="Your Email" class="w-full px-5 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:border-secondary transition-colors">
+                <textarea rows="4" placeholder="Your Message" class="w-full px-5 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:border-secondary transition-colors"></textarea>
+                <button type="submit" class="w-full px-8 py-3.5 rounded-lg bg-secondary text-white font-bold hover:bg-emerald-600 transition-all shadow-lg hover:shadow-emerald-500/20">
+                    Send Message
+                </button>
+            </form>
+        </div>
+        
+        <!-- Background decorative circles -->
+        <div class="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-secondary/10 blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-blue-500/10 blur-3xl"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-500 text-sm">© 2025 Nedumaran PM. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            // Icon animation toggle
+            if(menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
